@@ -18,5 +18,13 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::post('/login','App\Http\Controllers\UserController@login');
+Route::get('/logout', function () {
+    return view('login');
+});
+
+Route::post('/login','App\Http\Controllers\UserController@login');  /* Hidden File */
 Route::get('/','App\Http\Controllers\ProductController@index');
+Route::get('/detail/{id}','App\Http\Controllers\ProductController@detail');
+Route::get('/search','App\Http\Controllers\ProductController@search');
+
+Route::post('/add_to_cart','App\Http\Controllers\ProductController@addToCart');
